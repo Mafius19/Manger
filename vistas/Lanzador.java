@@ -1,5 +1,5 @@
 package vistas;
-
+//aqui un comentario al pedo
 import javax.swing.JFrame;
 
 public class Lanzador {
