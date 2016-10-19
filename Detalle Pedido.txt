@@ -1,0 +1,73 @@
+import javax.swing.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Detalle_Pedido extends JFrame implements ActionListener{
+	int colP=11,colE=9,esp_Y_Botones=15,esp_X_Botones=150;
+	JLabel titulo;
+	JButton aceptar,cancelar,volver;
+	JButton[] editarP=new JButton[colP];
+	JButton[] editarE=new JButton[colE];
+	
+	//parametros para ubicar los campos
+	int posx=150,posy=150,espacio=30;
+	
+	public Detalle_Pedido(){
+		
+		setLayout(null);
+		setTitle("Detalle del Pedido");
+
+		//Empanadas
+		for (int i=0;i<colE;i++){
+			editarE[i]=new JButton("Editar");
+			editarE[i].setBounds(posx, posy, 70, 15);
+			editarE[i].addActionListener(this);
+			add(editarE[i]);
+			posy=posy+25+esp_Y_Botones;
+		}
+		//Pizzas
+		posy=150;
+		posx=posx+90+esp_X_Botones;
+		for (int i=0;i<colP;i++){
+			editarP[i]=new JButton("Editar");
+			editarP[i].setBounds(posx, posy, 70, 15);
+			editarP[i].addActionListener(this);
+			add(editarP[i]);
+			posy=posy+25+esp_Y_Botones;
+		}		
+		
+		
+		aceptar=new JButton("Aceptar");
+		aceptar.setBounds(40, 650, 120, 40);
+		aceptar.setIcon(new ImageIcon("imagenes/confirm.png"));
+		aceptar.setIconTextGap(2);
+		aceptar.addActionListener(this);
+		add(aceptar);
+		
+		cancelar=new JButton("Cancelar");
+		cancelar.setBounds(160+espacio, 650, 120, 40);
+		cancelar.setIcon(new ImageIcon("imagenes/cancelar.png"));
+		cancelar.setIconTextGap(2);
+		cancelar.addActionListener(this);
+		add(cancelar);
+		
+		volver=new JButton("Volver");
+		volver.setBounds(310+espacio, 650, 120, 40);
+		volver.setIcon(new ImageIcon("imagenes/volver.png"));
+		volver.setIconTextGap(2);
+		volver.addActionListener(this);
+		add(volver);
+	}
+	
+	private static final long serialVersionUID = 1L;
+	
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource()==aceptar){
+			
+		}
+		
+	}
+	
+	
+}
